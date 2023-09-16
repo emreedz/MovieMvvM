@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="best"
+            type="com.example.mymoviemvvm.mymvvmmovie.models.movie.best.BestResults" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/best_movie_imageview"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="@string/imageviewText"
+                android:scaleType="fitXY"
+                android:src="@drawable/no_image"
+                app:imageUrl="@{best.poster_path}"></ImageView>
+
+            <TextView
+                android:id="@+id/best_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/best_movie_imageview"
+                android:singleLine="true"
+                android:text="@{best.title}"></TextView>
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
